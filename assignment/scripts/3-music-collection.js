@@ -68,5 +68,23 @@ const esAlbum = findByArtist('Ed Sheeran');
 console.log(esAlbum);
 //should return Bad Habits, Ed Sheeran, 2021
 
+//Stretch GOALS
 
+let firstSearch = {artist: 'Ed Sheeran', year: 2021};
+let results = [];
+function search (searchItem) {
+    for (let i=0; i<collection.length; i++) {
+        const searchAlbum = collection[i];
+        if (searchAlbum.artist === searchItem.artist && searchAlbum.year === searchItem.year) {
+            results.push(searchAlbum);
+        }
+        if (searchAlbum.artist !== searchItem.artist && searchAlbum.year !== searchItem.year){
+            return [];
+        }
+        else {
+            return collection;
+        }
+    }
+}
 
+console.log(search(firstSearch));
